@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyanalytics"
+version = "0.1.0"
+description = "Uma CLI corporativa para análise e extração de dados rápido no terminal."
+readme = "README.md"
+authors = [
+    { name = "Gorska", email = "gorska@example.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "typer>=0.12.3",
+    "pandas>=2.2.0",
+    "matplotlib>=3.8.0",
+    "rich>=13.7.0",
+    "pyarrow>=15.0.0" # Adicionado para suporte nativo a arquivos .parquet
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.1.0",
+    "black>=24.0.0",
+    "flake8>=7.0.0",
+    "mypy>=1.9.0"
+]
+
+[project.scripts]
+pyanalytics = "pyanalytics.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["pyanalytics*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py312']
+
+[tool.mypy]
+python_version = "3.12"
+check_untyped_defs = true
+disallow_untyped_defs = true
+warn_return_any = true
+ignore_missing_imports = true
