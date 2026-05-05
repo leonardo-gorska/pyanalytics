@@ -12,8 +12,8 @@ O **PyAnalytics** é uma CLI corporativa baseada em Python, rápida e confiável
 Aproveitando o padrão moderno `pyproject.toml`, você pode injetar essa CLI em qualquer ambiente local apenas usando pip na raiz do pacote:
 
 ```bash
-git clone https://github.com/seu-user/pyanalytics-cli.git
-cd pyanalytics-cli
+git clone https://github.com/leonardo-gorska/pyanalytics.git
+cd pyanalytics
 
 # Instalando globalmente no seu venv
 pip install .
